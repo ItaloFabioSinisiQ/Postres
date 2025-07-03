@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no"/>
+  <title>Delicias Dulces</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- FontAwesome CDN for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <canvas id="bg-particles"></canvas>
+  <header id="header">
+    <div class="nav-bar">
+      <button id="menu-toggle" aria-label="Abrir menú"><i class="fas fa-bars"></i></button>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="#home"><i class="fas fa-home"></i> Inicio</a></li>
+        <li><a href="#catalog"><i class="fas fa-birthday-cake"></i> Catálogo</a></li>
+        <li><a href="#plans"><i class="fas fa-gift"></i> Planes</a></li>
+        <li><a href="#contact"><i class="fas fa-envelope"></i> Contacto</a></li>
+        <li><a href="#location"><i class="fas fa-map-marker-alt"></i> Ubicación y Delivery</a></li>
+        <li><a href="#social"><i class="fab fa-instagram"></i> Redes Sociales</a></li>
+        <li><a href="#policies"><i class="fas fa-file-alt"></i> Políticas</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div id="menu-overlay" class="hide"></div>
+
+  <!-- Home Section -->
+  <header class="hero section-animate" id="home">
+    <div class="hero-bg"></div>
+    <canvas id="hero-ballpit"></canvas>
+    <div class="hero-content">
+      <h1><i class="fas fa-ice-cream"></i> Delicias Dulces</h1>
+      <p><i class="fas fa-star"></i> Postres artesanales para cada ocasión <i class="fas fa-star"></i></p>
+      <div class="hero-social-buttons">
+        <a href="https://facebook.com" class="hero-social-btn" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://instagram.com" class="hero-social-btn" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/1234567890" class="hero-social-btn" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Gallery / Catalog Section -->
+  <section class="products section-animate" id="catalog">
+    <h2><i class="fas fa-birthday-cake"></i> Catálogo de Productos</h2>
+    <div class="carousel-container">
+      <button class="carousel-btn left"><i class="fas fa-chevron-left"></i></button>
+      <div class="carousel-track">
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836" alt="Cheesecake" />
+          <h3><i class="fas fa-cheese"></i> Cheesecake</h3>
+          <p>Suave, cremoso y delicioso.</p>
+          <button><i class="fas fa-shopping-cart"></i> Comprar</button>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1519864600265-abb23847ef2c" alt="Brownie" />
+          <h3><i class="fas fa-cookie"></i> Brownie</h3>
+          <p>Chocolate intenso y textura perfecta.</p>
+          <button><i class="fas fa-shopping-cart"></i> Comprar</button>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1464306076886-debca5e8a6b0" alt="Tarta de Frutas" />
+          <h3><i class="fas fa-apple-alt"></i> Tarta de Frutas</h3>
+          <p>Fresca y colorida, con frutas de estación.</p>
+          <button><i class="fas fa-shopping-cart"></i> Comprar</button>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1502741338009-cac2772e18bc" alt="Cupcakes" />
+          <h3><i class="fas fa-cupcake"></i> Cupcakes</h3>
+          <p>Mini pastelitos decorados a tu gusto.</p>
+          <button><i class="fas fa-shopping-cart"></i> Comprar</button>
+        </div>
+        <!-- Puedes agregar más productos aquí -->
+      </div>
+      <button class="carousel-btn right"><i class="fas fa-chevron-right"></i></button>
+    </div>
+  </section>
+
+  <!-- Plans / Promotions Section -->
+  <section class="plans-section section-animate" id="plans">
+    <h2><i class="fas fa-gift"></i> Planes y Promociones</h2>
+    <div class="plans-grid">
+      <div class="plan-card destacado">
+        <span class="plan-badge oferta"><i class="fas fa-star"></i> Oferta</span>
+        <img class="plan-img" src="https://images.unsplash.com/photo-1504674900247-0877df9cc836" alt="Plan Cumpleaños" />
+        <h3><i class="fas fa-birthday-cake"></i> Plan Cumpleaños</h3>
+        <p><i class="fas fa-cake-candles"></i> Incluye 2 tortas y 24 cupcakes a precio especial.</p>
+        <div class="plan-price">$49.99</div>
+        <button class="plan-btn"><i class="fas fa-gift"></i> Lo quiero</button>
+      </div>
+      <div class="plan-card">
+        <span class="plan-badge nuevo"><i class="fas fa-bolt"></i> Nuevo</span>
+        <img class="plan-img" src="https://images.unsplash.com/photo-1464306076886-debca5e8a6b0" alt="Plan Verano" />
+        <h3><i class="fas fa-ice-cream"></i> Plan Verano</h3>
+        <p><i class="fas fa-sun"></i> 3 helados artesanales + 1 tarta de frutas.</p>
+        <div class="plan-price">$29.99</div>
+        <button class="plan-btn"><i class="fas fa-gift"></i> Lo quiero</button>
+      </div>
+      <div class="plan-card">
+        <img class="plan-img" src="https://images.unsplash.com/photo-1519864600265-abb23847ef2c" alt="Promoción Semana" />
+        <h3><i class="fas fa-calendar-week"></i> Promoción Semana</h3>
+        <p><i class="fas fa-cookie-bite"></i> 2x1 en brownies todos los viernes.</p>
+        <div class="plan-price">$9.99</div>
+        <button class="plan-btn"><i class="fas fa-gift"></i> Lo quiero</button>
+      </div>
+      <div class="plan-card">
+        <img class="plan-img" src="https://images.unsplash.com/photo-1502741338009-cac2772e18bc" alt="Plan Café y Dulce" />
+        <h3><i class="fas fa-mug-hot"></i> Plan Café y Dulce</h3>
+        <p><i class="fas fa-coffee"></i> 2 cafés + 2 porciones de pastel a precio especial.</p>
+        <div class="plan-price">$14.99</div>
+        <button class="plan-btn"><i class="fas fa-gift"></i> Lo quiero</button>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Contact Form Section -->
+  <section class="contact-section section-animate" id="contact">
+    <div class="contact-card">
+      <div class="contact-img-bg">
+        <img class="contact-img" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb" alt="Contáctanos" />
+      </div>
+      <div class="contact-content">
+        <h2><i class="fas fa-envelope"></i> Contáctanos</h2>
+        <p class="contact-invite"><i class="fas fa-comment-dots"></i> ¿Tienes dudas, pedidos especiales o quieres saludarnos? ¡Escríbenos!</p>
+        <form id="contact-form">
+          <div class="input-group">
+            <span class="input-icon"><i class="fas fa-user"></i></span>
+            <input type="text" name="name" placeholder="Tu nombre" required />
+          </div>
+          <div class="input-group">
+            <span class="input-icon"><i class="fas fa-envelope"></i></span>
+            <input type="email" name="email" placeholder="Tu email" required />
+          </div>
+          <div class="input-group">
+            <span class="input-icon"><i class="fas fa-comment"></i></span>
+            <textarea name="message" placeholder="Tu mensaje" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="contact-btn"><i class="fas fa-paper-plane"></i> Enviar mensaje</button>
+        </form>
+        <div id="form-message"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Location & Delivery Section -->
+  <section class="location-section section-animate" id="location">
+    <h2><i class="fas fa-map-marker-alt"></i> Ubicación y Delivery</h2>
+    <p><i class="fas fa-store"></i> Nos encontramos en Calle Dulce 123, Ciudad Pastel. <br><i class="fas fa-truck"></i> Realizamos delivery en toda la ciudad.</p>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!..." width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  </section>
+
+  <!-- Social Media Section -->
+  <section class="social-section section-animate" id="social">
+    <h2><i class="fas fa-hashtag"></i> Redes Sociales</h2>
+    <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i> Facebook</a> |
+    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i> Instagram</a> |
+    <a href="https://wa.me/1234567890" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+  </section>
+
+  <!-- Policies Section -->
+  <section class="policies-section section-animate" id="policies">
+    <h2><i class="fas fa-file-alt"></i> Políticas</h2>
+    <p><i class="fas fa-shield-alt"></i> Consulta nuestras políticas de privacidad, devoluciones y términos de servicio.</p>
+  </section>
+
+  <footer>
+    <p><i class="fas fa-copyright"></i> 2024 Delicias Dulces. Todos los derechos reservados.</p>
+  </footer>
+  <button id="scrollToTop" title="Volver arriba"><i class="fas fa-arrow-up"></i></button>
+  <script src="main.js"></script>
+</body>
+</html>
