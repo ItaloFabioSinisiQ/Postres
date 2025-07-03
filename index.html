@@ -20,9 +20,6 @@
         <li><a href="#catalog"><i class="fas fa-birthday-cake"></i> Catálogo</a></li>
         <li><a href="#plans"><i class="fas fa-gift"></i> Planes</a></li>
         <li><a href="#contact"><i class="fas fa-envelope"></i> Contacto</a></li>
-        <li><a href="#location"><i class="fas fa-map-marker-alt"></i> Ubicación y Delivery</a></li>
-        <li><a href="#social"><i class="fab fa-instagram"></i> Redes Sociales</a></li>
-        <li><a href="#policies"><i class="fas fa-file-alt"></i> Políticas</a></li>
       </ul>
     </nav>
   </header>
@@ -119,7 +116,7 @@
 
 
   <!-- Contact Form Section -->
-  <section class="contact-section section-animate" id="contact">
+  <section class="contact section-animate" id="contact">
     <div class="contact-card">
       <div class="contact-img-bg">
         <img class="contact-img" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb" alt="Contáctanos" />
@@ -127,45 +124,23 @@
       <div class="contact-content">
         <h2><i class="fas fa-envelope"></i> Contáctanos</h2>
         <p class="contact-invite"><i class="fas fa-comment-dots"></i> ¿Tienes dudas, pedidos especiales o quieres saludarnos? ¡Escríbenos!</p>
-        <form id="contact-form">
-          <div class="input-group">
-            <span class="input-icon"><i class="fas fa-user"></i></span>
-            <input type="text" name="name" placeholder="Tu nombre" required />
+        <form id="contact-form" class="contact-form" action="https://formspree.io/f/tu_codigo" method="POST">
+          <div class="form-group">
+            <label for="name">Nombre</label>
+            <input type="text" id="name" name="name" placeholder="Tu nombre" required />
           </div>
-          <div class="input-group">
-            <span class="input-icon"><i class="fas fa-envelope"></i></span>
-            <input type="email" name="email" placeholder="Tu email" required />
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Tu email" required />
           </div>
-          <div class="input-group">
-            <span class="input-icon"><i class="fas fa-comment"></i></span>
-            <textarea name="message" placeholder="Tu mensaje" rows="5" required></textarea>
+          <div class="form-group">
+            <label for="message">Mensaje</label>
+            <textarea id="message" name="message" placeholder="Tu mensaje" rows="5" required></textarea>
           </div>
-          <button type="submit" class="contact-btn"><i class="fas fa-paper-plane"></i> Enviar mensaje</button>
+          <button type="submit" class="contact-btn"><i class="fas fa-paper-plane"></i> Enviar Mensaje</button>
         </form>
-        <div id="form-message"></div>
       </div>
     </div>
-  </section>
-
-  <!-- Location & Delivery Section -->
-  <section class="location-section section-animate" id="location">
-    <h2><i class="fas fa-map-marker-alt"></i> Ubicación y Delivery</h2>
-    <p><i class="fas fa-store"></i> Nos encontramos en Calle Dulce 123, Ciudad Pastel. <br><i class="fas fa-truck"></i> Realizamos delivery en toda la ciudad.</p>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!..." width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-  </section>
-
-  <!-- Social Media Section -->
-  <section class="social-section section-animate" id="social">
-    <h2><i class="fas fa-hashtag"></i> Redes Sociales</h2>
-    <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i> Facebook</a> |
-    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i> Instagram</a> |
-    <a href="https://wa.me/1234567890" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-  </section>
-
-  <!-- Policies Section -->
-  <section class="policies-section section-animate" id="policies">
-    <h2><i class="fas fa-file-alt"></i> Políticas</h2>
-    <p><i class="fas fa-shield-alt"></i> Consulta nuestras políticas de privacidad, devoluciones y términos de servicio.</p>
   </section>
 
   <footer>

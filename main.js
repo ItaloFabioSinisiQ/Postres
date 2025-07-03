@@ -255,3 +255,80 @@ navLinks.forEach(link => link.addEventListener('click', closeMenu));
   balls = Array.from({length: count}, () => new Ball());
   animate();
 })();
+
+// Formspree form handling
+const form = document.querySelector('form[action*="formspree.io"]');
+if (form) {
+    form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        const submitButton = form.querySelector('button[type="submit"]');
+        const originalButtonText = submitButton.innerHTML;
+        submitButton.disabled = true;
+        submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+        const formData = new FormData(form);
+        try {
+            const response = await fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+            if (response.ok) {
+                form.dispatchEvent(new Event('formspree:success'));
+            } else {
+                form.dispatchEvent(new Event('formspree:error'));
+            }
+        } catch (error) {
+            form.dispatchEvent(new Event('formspree:error'));
+        } finally {
+            form.dispatchEvent(new Event('formspree:end'));
+        }
+    });
+    form.addEventListener('formspree:success', () => {
+        const successMessage = document.createElement('div');
+        successMessage.style.position = 'fixed';
+        successMessage.style.bottom = '30px';
+        successMessage.style.left = '50%';
+        successMessage.style.transform = 'translateX(-50%)';
+        successMessage.style.backgroundColor = '#4CAF50';
+        successMessage.style.color = 'white';
+        successMessage.style.padding = '15px 30px';
+        successMessage.style.borderRadius = '50px';
+        successMessage.style.boxShadow = '0 5px 15px rgba(0,0,0,0.2)';
+        successMessage.style.zIndex = '1000';
+        successMessage.style.animation = 'fadeInUp 0.5s ease-out';
+        successMessage.innerHTML = '<i class="fas fa-check-circle"></i> ¡Mensaje enviado con éxito!';
+        document.body.appendChild(successMessage);
+        setTimeout(() => {
+            successMessage.style.animation = 'fadeOut 0.5s ease-out';
+            setTimeout(() => successMessage.remove(), 500);
+        }, 3000);
+        form.reset();
+    });
+    form.addEventListener('formspree:error', () => {
+        const errorMessage = document.createElement('div');
+        errorMessage.style.position = 'fixed';
+        errorMessage.style.bottom = '30px';
+        errorMessage.style.left = '50%';
+        errorMessage.style.transform = 'translateX(-50%)';
+        errorMessage.style.backgroundColor = '#f44336';
+        errorMessage.style.color = 'white';
+        errorMessage.style.padding = '15px 30px';
+        errorMessage.style.borderRadius = '50px';
+        errorMessage.style.boxShadow = '0 5px 15px rgba(0,0,0,0.2)';
+        errorMessage.style.zIndex = '1000';
+        errorMessage.style.animation = 'fadeInUp 0.5s ease-out';
+        errorMessage.innerHTML = '<i class="fas fa-times-circle"></i> Hubo un error al enviar tu mensaje.';
+        document.body.appendChild(errorMessage);
+        setTimeout(() => {
+            errorMessage.style.animation = 'fadeOut 0.5s ease-out';
+            setTimeout(() => errorMessage.remove(), 500);
+        }, 3000);
+    });
+    form.addEventListener('formspree:end', () => {
+        const submitButton = form.querySelector('button[type="submit"]');
+        submitButton.disabled = false;
+        submitButton.innerHTML = 'Enviar Mensaje';
+    });
+}
