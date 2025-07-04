@@ -10,21 +10,6 @@
 </head>
 <body>
   <canvas id="bg-particles"></canvas>
-  <header id="header">
-    <div class="nav-bar">
-      <button id="menu-toggle" aria-label="Abrir menú"><i class="fas fa-bars"></i></button>
-    </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="#home"><i class="fas fa-home"></i> Inicio</a></li>
-        <li><a href="#catalog"><i class="fas fa-birthday-cake"></i> Catálogo</a></li>
-        <li><a href="#plans"><i class="fas fa-gift"></i> Planes</a></li>
-        <li><a href="#contact"><i class="fas fa-envelope"></i> Contacto</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <div id="menu-overlay" class="hide"></div>
 
   <!-- Home Section -->
   <header class="hero section-animate" id="home">
@@ -35,6 +20,16 @@
         <h1><i class="fas fa-ice-cream"></i> Delicias Dulces</h1>
       </div>
       <p><i class="fas fa-star"></i> Postres artesanales para cada ocasión <i class="fas fa-star"></i></p>
+      
+      <!-- Navigation integrated into hero -->
+      <nav class="hero-nav">
+        <ul>
+          <li><a href="#catalog"><i class="fas fa-birthday-cake"></i> Catálogo</a></li>
+          <li><a href="#plans"><i class="fas fa-gift"></i> Planes</a></li>
+          <li><a href="#contact"><i class="fas fa-envelope"></i> Contacto</a></li>
+        </ul>
+      </nav>
+      
       <div class="hero-social-buttons">
         <a href="https://facebook.com" class="hero-social-btn" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
         <a href="https://instagram.com" class="hero-social-btn" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
@@ -50,25 +45,57 @@
       <button class="carousel-btn left"><i class="fas fa-chevron-left"></i></button>
       <div class="carousel-track">
         <div class="product-card">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836" alt="Cheesecake" />
+          <div class="product-image-container">
+            <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836" alt="Cheesecake" />
+            <div class="image-overlay">
+              <div class="overlay-content">
+                <i class="fas fa-play-circle"></i>
+                <span>Ver descripción</span>
+              </div>
+            </div>
+          </div>
           <h3><i class="fas fa-cheese"></i> Cheesecake</h3>
           <p>Suave, cremoso y delicioso.</p>
           <a href="https://wa.me/1234567890?text=Hola!%20Quiero%20comprar%20un%20Cheesecake" target="_blank" class="buy-whatsapp"><i class="fab fa-whatsapp"></i> Comprar</a>
         </div>
         <div class="product-card">
-          <img src="https://images.unsplash.com/photo-1519864600265-abb23847ef2c" alt="Brownie" />
+          <div class="product-image-container">
+            <img src="https://images.unsplash.com/photo-1519864600265-abb23847ef2c" alt="Brownie" />
+            <div class="image-overlay">
+              <div class="overlay-content">
+                <i class="fas fa-play-circle"></i>
+                <span>Ver descripción</span>
+              </div>
+            </div>
+          </div>
           <h3><i class="fas fa-cookie"></i> Brownie</h3>
           <p>Chocolate intenso y textura perfecta.</p>
           <a href="https://wa.me/1234567890?text=Hola!%20Quiero%20comprar%20un%20Brownie" target="_blank" class="buy-whatsapp"><i class="fab fa-whatsapp"></i> Comprar</a>
         </div>
         <div class="product-card">
-          <img src="https://images.unsplash.com/photo-1464306076886-debca5e8a6b0" alt="Tarta de Frutas" />
+          <div class="product-image-container">
+            <img src="https://images.unsplash.com/photo-1464306076886-debca5e8a6b0" alt="Tarta de Frutas" />
+            <div class="image-overlay">
+              <div class="overlay-content">
+                <i class="fas fa-play-circle"></i>
+                <span>Ver descripción</span>
+              </div>
+            </div>
+          </div>
           <h3><i class="fas fa-apple-alt"></i> Tarta de Frutas</h3>
           <p>Fresca y colorida, con frutas de estación.</p>
           <a href="https://wa.me/1234567890?text=Hola!%20Quiero%20comprar%20una%20Tarta%20de%20Frutas" target="_blank" class="buy-whatsapp"><i class="fab fa-whatsapp"></i> Comprar</a>
         </div>
         <div class="product-card">
-          <img src="https://images.unsplash.com/photo-1502741338009-cac2772e18bc" alt="Cupcakes" />
+          <div class="product-image-container">
+            <img src="https://images.unsplash.com/photo-1502741338009-cac2772e18bc" alt="Cupcakes" />
+            <div class="image-overlay">
+              <div class="overlay-content">
+                <i class="fas fa-play-circle"></i>
+                <span>Ver descripción</span>
+              </div>
+            </div>
+          </div>
           <h3><i class="fas fa-cupcake"></i> Cupcakes</h3>
           <p>Mini pastelitos decorados a tu gusto.</p>
           <a href="https://wa.me/1234567890?text=Hola!%20Quiero%20comprar%20Cupcakes" target="_blank" class="buy-whatsapp"><i class="fab fa-whatsapp"></i> Comprar</a>
@@ -85,7 +112,15 @@
     <div class="plans-grid">
       <div class="plan-card destacado">
         <span class="plan-badge oferta"><i class="fas fa-star"></i> Oferta</span>
-        <img class="plan-img" src="https://images.unsplash.com/photo-1504674900247-0877df9cc836" alt="Plan Cumpleaños" />
+        <div class="plan-image-container">
+          <img class="plan-img" src="https://images.unsplash.com/photo-1504674900247-0877df9cc836" alt="Plan Cumpleaños" />
+          <div class="image-overlay">
+            <div class="overlay-content">
+              <i class="fas fa-play-circle"></i>
+              <span>Ver descripción</span>
+            </div>
+          </div>
+        </div>
         <h3><i class="fas fa-birthday-cake"></i> Plan Cumpleaños</h3>
         <p><i class="fas fa-cake-candles"></i> Incluye 2 tortas y 24 cupcakes a precio especial.</p>
         <div class="plan-price">$49.99</div>
@@ -93,21 +128,45 @@
       </div>
       <div class="plan-card">
         <span class="plan-badge nuevo"><i class="fas fa-bolt"></i> Nuevo</span>
-        <img class="plan-img" src="https://images.unsplash.com/photo-1464306076886-debca5e8a6b0" alt="Plan Verano" />
+        <div class="plan-image-container">
+          <img class="plan-img" src="https://images.unsplash.com/photo-1464306076886-debca5e8a6b0" alt="Plan Verano" />
+          <div class="image-overlay">
+            <div class="overlay-content">
+              <i class="fas fa-play-circle"></i>
+              <span>Ver descripción</span>
+            </div>
+          </div>
+        </div>
         <h3><i class="fas fa-ice-cream"></i> Plan Verano</h3>
         <p><i class="fas fa-sun"></i> 3 helados artesanales + 1 tarta de frutas.</p>
         <div class="plan-price">$29.99</div>
         <a href="https://wa.me/1234567890?text=Hola!%20Me%20interesa%20el%20Plan%20Verano" target="_blank" class="buy-whatsapp"><i class="fab fa-whatsapp"></i> Lo quiero</a>
       </div>
       <div class="plan-card">
-        <img class="plan-img" src="https://images.unsplash.com/photo-1519864600265-abb23847ef2c" alt="Promoción Semana" />
+        <div class="plan-image-container">
+          <img class="plan-img" src="https://images.unsplash.com/photo-1519864600265-abb23847ef2c" alt="Promoción Semana" />
+          <div class="image-overlay">
+            <div class="overlay-content">
+              <i class="fas fa-play-circle"></i>
+              <span>Ver descripción</span>
+            </div>
+          </div>
+        </div>
         <h3><i class="fas fa-calendar-week"></i> Promoción Semana</h3>
         <p><i class="fas fa-cookie-bite"></i> 2x1 en brownies todos los viernes.</p>
         <div class="plan-price">$9.99</div>
         <a href="https://wa.me/1234567890?text=Hola!%20Me%20interesa%20la%20Promoción%20Semana" target="_blank" class="buy-whatsapp"><i class="fab fa-whatsapp"></i> Lo quiero</a>
       </div>
       <div class="plan-card">
-        <img class="plan-img" src="https://images.unsplash.com/photo-1502741338009-cac2772e18bc" alt="Plan Café y Dulce" />
+        <div class="plan-image-container">
+          <img class="plan-img" src="https://images.unsplash.com/photo-1502741338009-cac2772e18bc" alt="Plan Café y Dulce" />
+          <div class="image-overlay">
+            <div class="overlay-content">
+              <i class="fas fa-play-circle"></i>
+              <span>Ver descripción</span>
+            </div>
+          </div>
+        </div>
         <h3><i class="fas fa-mug-hot"></i> Plan Café y Dulce</h3>
         <p><i class="fas fa-coffee"></i> 2 cafés + 2 porciones de pastel a precio especial.</p>
         <div class="plan-price">$14.99</div>
@@ -146,6 +205,87 @@
     <p><i class="fas fa-copyright"></i> 2024 Delicias Dulces. Todos los derechos reservados.</p>
     <p><i class="fas fa-envelope"></i> Contacto: <a href="mailto:italosinisi94@gmail.com">italosinisi94@gmail.com</a></p>
   </footer>
+  
+  <!-- Pantalla de carga para compras -->
+  <div id="loading-screen" class="loading-screen">
+    <div class="loading-content">
+      <div class="loading-spinner">
+        <i class="fas fa-heart"></i>
+      </div>
+      <h2>¡Gracias por tu compra!</h2>
+      <p>Estamos preparando tu pedido con mucho amor...</p>
+      <div class="loading-dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <p class="loading-note">Serás redirigido a WhatsApp en unos segundos</p>
+    </div>
+  </div>
+  
+  <!-- Modal de Producto -->
+  <div id="product-modal" class="product-modal">
+    <div class="modal-overlay"></div>
+    <div class="modal-content">
+      <button class="modal-close" id="modal-close">
+        <i class="fas fa-times"></i>
+      </button>
+      
+      <div class="modal-video-section">
+        <div class="video-container">
+          <video id="product-video" controls>
+            <source src="" type="video/mp4">
+            Tu navegador no soporta videos.
+          </video>
+        </div>
+      </div>
+      
+      <div class="modal-info-section">
+        <div class="product-header">
+          <h2 id="modal-product-title"></h2>
+          <div class="product-rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <span>(4.9/5)</span>
+          </div>
+        </div>
+        
+        <div class="product-description">
+          <h3><i class="fas fa-info-circle"></i> Descripción</h3>
+          <p id="modal-product-description"></p>
+        </div>
+        
+        <div class="product-details">
+          <div class="detail-item">
+            <i class="fas fa-clock"></i>
+            <span>Tiempo de preparación: <strong id="modal-prep-time"></strong></span>
+          </div>
+          <div class="detail-item">
+            <i class="fas fa-users"></i>
+            <span>Porciones: <strong id="modal-servings"></strong></span>
+          </div>
+          <div class="detail-item">
+            <i class="fas fa-leaf"></i>
+            <span>Ingredientes: <strong id="modal-ingredients"></strong></span>
+          </div>
+        </div>
+        
+        <div class="product-price">
+          <span class="price-label">Precio:</span>
+          <span class="price-amount" id="modal-price"></span>
+        </div>
+        
+        <button class="modal-buy-btn" id="modal-buy-btn">
+          <i class="fab fa-whatsapp"></i>
+          Comprar Ahora
+        </button>
+      </div>
+    </div>
+  </div>
+  
   <button id="scrollToTop" title="Volver arriba"><i class="fas fa-arrow-up"></i></button>
   <script src="main.js"></script>
 </body>

@@ -85,41 +85,13 @@ const scrollBtn = document.getElementById('scrollToTop');
 window.addEventListener('scroll', () => {
   if (window.scrollY > 300) {
     scrollBtn.classList.add('show');
-    document.querySelector('.main-nav').classList.add('scrolled');
   } else {
     scrollBtn.classList.remove('show');
-    document.querySelector('.main-nav').classList.remove('scrolled');
   }
 });
 scrollBtn.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
-
-// Menú hamburguesa responsivo
-const menuToggle = document.getElementById('menu-toggle');
-const mainNav = document.querySelector('.main-nav');
-const menuOverlay = document.getElementById('menu-overlay');
-const navLinks = document.querySelectorAll('.main-nav a');
-
-function openMenu() {
-  mainNav.classList.add('open');
-  menuOverlay.classList.remove('hide');
-  document.body.classList.add('menu-open');
-}
-function closeMenu() {
-  mainNav.classList.remove('open');
-  menuOverlay.classList.add('hide');
-  document.body.classList.remove('menu-open');
-}
-menuToggle.addEventListener('click', () => {
-  if (mainNav.classList.contains('open')) {
-    closeMenu();
-  } else {
-    openMenu();
-  }
-});
-menuOverlay.addEventListener('click', closeMenu);
-navLinks.forEach(link => link.addEventListener('click', closeMenu));
 
 // Partículas animadas sutiles en el fondo
 (function() {
@@ -332,3 +304,253 @@ if (form) {
         submitButton.innerHTML = 'Enviar Mensaje';
     });
 }
+
+// Loading screen functionality for purchase buttons
+function showLoadingScreen(whatsappUrl, productName) {
+  const loadingScreen = document.getElementById('loading-screen');
+  const loadingTitle = loadingScreen.querySelector('h2');
+  const loadingMessage = loadingScreen.querySelector('p');
+  
+  // Personalizar el mensaje según el producto
+  if (productName) {
+    loadingTitle.textContent = `¡Gracias por elegir ${productName}!`;
+    loadingMessage.textContent = `Estamos preparando tu ${productName} con mucho amor...`;
+  } else {
+    loadingTitle.textContent = '¡Gracias por tu compra!';
+    loadingMessage.textContent = 'Estamos preparando tu pedido con mucho amor...';
+  }
+  
+  loadingScreen.classList.add('show');
+  
+  // Redirect to WhatsApp after 3 seconds
+  setTimeout(() => {
+    window.open(whatsappUrl, '_blank');
+    loadingScreen.classList.remove('show');
+  }, 3000);
+}
+
+// Function to create personalized WhatsApp message
+function createWhatsAppMessage(productName, productType = 'producto') {
+  const baseMessage = `Hola! 👋 Me interesa comprar ${productType === 'plan' ? 'el' : 'un'} ${productName} de Delicias Dulces. ¿Podrías darme más información sobre precios y disponibilidad? 🍰✨`;
+  return encodeURIComponent(baseMessage);
+}
+
+// Add event listeners to all purchase buttons
+document.addEventListener('DOMContentLoaded', function() {
+  const purchaseButtons = document.querySelectorAll('.buy-whatsapp');
+  
+  purchaseButtons.forEach(button => {
+    button.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      // Buscar el nombre del producto/plan en la tarjeta
+      const productCard = this.closest('.product-card, .plan-card');
+      let productName = '';
+      let productType = 'producto';
+      
+      if (productCard) {
+        const titleElement = productCard.querySelector('h3');
+        if (titleElement) {
+          // Extraer solo el texto del título (sin el icono)
+          productName = titleElement.textContent.trim();
+          // Determinar si es un plan o producto
+          productType = productCard.classList.contains('plan-card') ? 'plan' : 'producto';
+        }
+      }
+      
+      // Crear mensaje personalizado
+      const personalizedMessage = createWhatsAppMessage(productName, productType);
+      const whatsappUrl = `https://wa.me/1234567890?text=${personalizedMessage}`;
+      
+      showLoadingScreen(whatsappUrl, productName);
+    });
+  });
+});
+
+// Product data for modal
+const productData = {
+  'Cheesecake': {
+    title: 'Cheesecake Artesanal',
+    description: 'Nuestro cheesecake es una obra maestra de la repostería. Preparado con queso crema premium, huevos frescos y una base de galletas caseras. La textura es suave y cremosa, con un sabor equilibrado que no es demasiado dulce. Perfecto para cualquier ocasión especial.',
+    prepTime: '24 horas',
+    servings: '8-10 personas',
+    ingredients: 'Queso crema, huevos, azúcar, galletas, mantequilla, vainilla',
+    price: '$18.99',
+    video: 'https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4'
+  },
+  'Brownie': {
+    title: 'Brownie de Chocolate Intenso',
+    description: 'Un brownie que te transportará al paraíso del chocolate. Preparado con chocolate negro de alta calidad, mantequilla y huevos frescos. La textura es perfecta: crujiente por fuera y suave por dentro, con trozos de chocolate que se derriten en tu boca.',
+    prepTime: '2 horas',
+    servings: '6-8 personas',
+    ingredients: 'Chocolate negro, mantequilla, huevos, azúcar, harina, nueces',
+    price: '$12.99',
+    video: 'https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_2mb.mp4'
+  },
+  'Tarta de Frutas': {
+    title: 'Tarta de Frutas Frescas',
+    description: 'Una tarta colorida y refrescante con las mejores frutas de temporada. La base es una masa quebrada casera, rellena con crema pastelera ligera y decorada con frutas frescas. Cada bocado es una explosión de sabores naturales.',
+    prepTime: '4 horas',
+    servings: '10-12 personas',
+    ingredients: 'Frutas frescas, crema pastelera, masa quebrada, gelatina',
+    price: '$22.99',
+    video: 'https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_3mb.mp4'
+  },
+  'Cupcakes': {
+    title: 'Cupcakes Decorados',
+    description: 'Mini pastelitos individuales decorados con mucho amor y creatividad. Disponibles en diferentes sabores: vainilla, chocolate, fresa y limón. Cada cupcake viene con un frosting casero y decoraciones únicas.',
+    prepTime: '3 horas',
+    servings: '12 cupcakes',
+    ingredients: 'Harina, azúcar, huevos, mantequilla, leche, frosting',
+    price: '$15.99',
+    video: 'https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_4mb.mp4'
+  }
+};
+
+// Plan data for modal
+const planData = {
+  'Plan Cumpleaños': {
+    title: 'Plan Cumpleaños Especial',
+    description: 'El plan perfecto para celebrar el cumpleaños de tus seres queridos. Incluye 2 tortas decoradas personalmente según tus preferencias y 24 cupcakes con diferentes sabores y decoraciones. Ideal para fiestas de 20-30 personas. Incluye velas y decoraciones adicionales.',
+    prepTime: '48 horas',
+    servings: '20-30 personas',
+    ingredients: '2 tortas + 24 cupcakes + decoraciones',
+    price: '$49.99',
+    video: 'https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_5mb.mp4'
+  },
+  'Plan Verano': {
+    title: 'Plan Verano Refrescante',
+    description: 'Disfruta del verano con nuestros helados artesanales y tartas refrescantes. El plan incluye 3 helados de diferentes sabores (fresa, chocolate y vainilla) más una tarta de frutas frescas. Perfecto para días calurosos y reuniones familiares.',
+    prepTime: '6 horas',
+    servings: '8-12 personas',
+    ingredients: '3 helados artesanales + 1 tarta de frutas',
+    price: '$29.99',
+    video: 'https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_6mb.mp4'
+  },
+  'Promoción Semana': {
+    title: 'Promoción Semanal - 2x1 en Brownies',
+    description: 'Todos los viernes disfruta de nuestra promoción especial: 2x1 en brownies de chocolate. Una oferta imperdible para los amantes del chocolate. Los brownies son frescos, húmedos y con trozos de chocolate. Perfecto para compartir o disfrutar solo.',
+    prepTime: '2 horas',
+    servings: '2 brownies',
+    ingredients: 'Chocolate negro, mantequilla, huevos, azúcar, harina',
+    price: '$9.99',
+    video: 'https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_7mb.mp4'
+  },
+  'Plan Café y Dulce': {
+    title: 'Plan Café y Dulce',
+    description: 'La combinación perfecta: café de especialidad con nuestros pasteles caseros. Incluye 2 cafés gourmet (americano, espresso o cappuccino) y 2 porciones generosas de pastel del día. Ideal para reuniones de trabajo o tardes con amigos.',
+    prepTime: '1 hora',
+    servings: '2 personas',
+    ingredients: '2 cafés + 2 porciones de pastel',
+    price: '$14.99',
+    video: 'https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_8mb.mp4'
+  }
+};
+
+// Modal functionality
+const productModal = document.getElementById('product-modal');
+const modalClose = document.getElementById('modal-close');
+const modalOverlay = document.querySelector('.modal-overlay');
+const productVideo = document.getElementById('product-video');
+const modalProductTitle = document.getElementById('modal-product-title');
+const modalProductDescription = document.getElementById('modal-product-description');
+const modalPrepTime = document.getElementById('modal-prep-time');
+const modalServings = document.getElementById('modal-servings');
+const modalIngredients = document.getElementById('modal-ingredients');
+const modalPrice = document.getElementById('modal-price');
+const modalBuyBtn = document.getElementById('modal-buy-btn');
+
+let currentProduct = null;
+
+function openProductModal(productName) {
+  const product = productData[productName];
+  const plan = planData[productName];
+  
+  if (!product && !plan) return;
+  
+  currentProduct = productName;
+  const isPlan = !!plan;
+  const data = product || plan;
+  
+  // Populate modal with product/plan data
+  modalProductTitle.textContent = data.title;
+  modalProductDescription.textContent = data.description;
+  modalPrepTime.textContent = data.prepTime;
+  modalServings.textContent = data.servings;
+  modalIngredients.textContent = data.ingredients;
+  modalPrice.textContent = data.price;
+  
+  // Set video source
+  productVideo.src = data.video;
+  
+  // Update buy button text based on type
+  modalBuyBtn.innerHTML = `<i class="fab fa-whatsapp"></i> ${isPlan ? 'Lo quiero' : 'Comprar Ahora'}`;
+  
+  // Show modal
+  productModal.classList.add('show');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeProductModal() {
+  productModal.classList.remove('show');
+  document.body.style.overflow = '';
+  
+  // Pause video when closing
+  productVideo.pause();
+  productVideo.currentTime = 0;
+  
+  currentProduct = null;
+}
+
+// Event listeners for modal
+modalClose.addEventListener('click', closeProductModal);
+modalOverlay.addEventListener('click', closeProductModal);
+
+// Close modal with Escape key
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape' && productModal.classList.contains('show')) {
+    closeProductModal();
+  }
+});
+
+// Modal buy button functionality
+modalBuyBtn.addEventListener('click', function() {
+  if (currentProduct) {
+    const isPlan = !!planData[currentProduct];
+    const productType = isPlan ? 'plan' : 'producto';
+    const personalizedMessage = createWhatsAppMessage(currentProduct, productType);
+    const whatsappUrl = `https://wa.me/1234567890?text=${personalizedMessage}`;
+    showLoadingScreen(whatsappUrl, currentProduct);
+    closeProductModal();
+  }
+});
+
+// Add click event listeners to product images
+document.addEventListener('DOMContentLoaded', function() {
+  const productImageContainers = document.querySelectorAll('.product-image-container');
+  
+  productImageContainers.forEach(container => {
+    container.addEventListener('click', function() {
+      const productCard = this.closest('.product-card');
+      const titleElement = productCard.querySelector('h3');
+      if (titleElement) {
+        const productName = titleElement.textContent.trim();
+        openProductModal(productName);
+      }
+    });
+  });
+  
+  // Add click event listeners to plan images
+  const planImageContainers = document.querySelectorAll('.plan-image-container');
+  
+  planImageContainers.forEach(container => {
+    container.addEventListener('click', function() {
+      const planCard = this.closest('.plan-card');
+      const titleElement = planCard.querySelector('h3');
+      if (titleElement) {
+        const planName = titleElement.textContent.trim();
+        openProductModal(planName);
+      }
+    });
+  });
+});
