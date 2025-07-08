@@ -2390,4 +2390,599 @@ h2:hover i.fa-envelope {
   }
 }
 
+/* Redes Sociales Destacadas */
+.social-highlight {
+  padding: 80px 0 80px 0;
+}
+.social-cards {
+  align-items: flex-start;
+  min-height: 600px;
+}
+.social-card {
+  min-height: 520px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.phone-frame {
+  height: 440px;
+}
+@media (max-width: 1000px) {
+  .social-highlight {
+    padding: 60px 0 60px 0;
+  }
+  .social-cards {
+    min-height: 0;
+  }
+  .social-card {
+    min-height: 380px;
+  }
+  .phone-frame {
+    height: 280px;
+  }
+}
+
+/* --- Mejora visual para cada red social (reinsertado y reforzado) --- */
+.social-card.instagram .phone-frame {
+  background: linear-gradient(135deg, #feda75 0%, #fa7e1e 40%, #d62976 70%, #962fbf 100%) !important;
+  box-shadow: 0 8px 32px rgba(218, 54, 102, 0.18), 0 2px 8px rgba(218,54,102,0.10);
+}
+.social-card.instagram .phone-screen {
+  background: #fff8f6;
+  border: 2.5px solid #e1306c33;
+}
+.social-card.instagram .phone-screen i {
+  color: #e1306c;
+}
+
+.social-card.facebook .phone-frame {
+  background: linear-gradient(135deg, #1877f2 0%, #4e8cff 100%) !important;
+  box-shadow: 0 8px 32px rgba(24, 119, 242, 0.18), 0 2px 8px rgba(24,119,242,0.10);
+}
+.social-card.facebook .phone-screen {
+  background: #f4f8ff;
+  border: 2.5px solid #1877f233;
+}
+.social-card.facebook .phone-screen i {
+  color: #1877f3;
+}
+
+.social-card.tiktok .phone-frame {
+  background: linear-gradient(135deg, #000 0%, #25f4ee 60%, #fe2c55 100%) !important;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18), 0 2px 8px rgba(254,44,85,0.10);
+}
+.social-card.tiktok .phone-screen {
+  background: #f9f9f9;
+  border: 2.5px solid #fe2c5533;
+}
+.social-card.tiktok .phone-screen i {
+  color: #000;
+  text-shadow: 1px 1px 0 #25f4ee, -1px -1px 0 #fe2c55;
+}
+
+.social-card {
+  background: none !important;
+  box-shadow: none !important;
+  border: none !important;
+  padding: 0 !important;
+  min-height: unset;
+  max-width: unset;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.social-cards {
+  gap: 56px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+@media (max-width: 1300px) {
+  .social-cards {
+    flex-direction: column;
+    gap: 32px;
+  }
+}
+
+.social-highlight {
+  padding: 100px 0 100px 0 !important;
+  background: #fff8f0;
+}
+
+@media (max-width: 1000px) {
+  .social-highlight {
+    padding: 60px 0 60px 0 !important;
+  }
+  .social-cards {
+    min-height: 0;
+    gap: 32px;
+  }
+  .social-card {
+    min-height: 380px;
+    margin-top: 1.2rem;
+    margin-bottom: 1.2rem;
+  }
+  .phone-frame {
+    height: 280px;
+  }
+}
+
+/* --- Bloques grandes y separados para cada red social --- */
+.social-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  align-items: stretch;
+  min-height: 0;
+}
+.social-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 420px;
+  border-radius: 36px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.10), 0 2px 8px rgba(210,105,30,0.10);
+  margin: 0 0 0 0;
+  padding: 48px 0;
+  background: #fff;
+  position: relative;
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+.social-card.instagram {
+  background: linear-gradient(135deg, #feda75 0%, #fa7e1e 40%, #d62976 70%, #962fbf 100%);
+  box-shadow: 0 8px 32px rgba(218, 54, 102, 0.18), 0 2px 8px rgba(218,54,102,0.10);
+}
+.social-card.facebook {
+  background: linear-gradient(135deg, #1877f2 0%, #4e8cff 100%);
+  box-shadow: 0 8px 32px rgba(24, 119, 242, 0.18), 0 2px 8px rgba(24,119,242,0.10);
+}
+.social-card.tiktok {
+  background: linear-gradient(135deg, #000 0%, #25f4ee 60%, #fe2c55 100%);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18), 0 2px 8px rgba(254,44,85,0.10);
+}
+.social-card .phone-frame {
+  background: #fff;
+  border-radius: 32px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+  width: 240px;
+  height: 480px;
+  margin: 0 auto;
+  padding: 18px 10px 28px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.social-card.instagram .phone-frame {
+  border: 3px solid #e1306c33;
+}
+.social-card.facebook .phone-frame {
+  border: 3px solid #1877f233;
+}
+.social-card.tiktok .phone-frame {
+  border: 3px solid #fe2c5533;
+}
+.social-card .phone-screen {
+  background: #fff;
+  border-radius: 24px;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 2px 8px rgba(210,105,30,0.07);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 10px 18px 10px;
+  position: relative;
+  z-index: 1;
+}
+.social-card .phone-screen i {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+.social-card .phone-screen h3 {
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+}
+.social-card .phone-screen p {
+  font-size: 0.98rem;
+  margin-bottom: 14px;
+}
+.social-card .phone-screen .social-btn {
+  font-size: 1rem;
+  padding: 10px 18px;
+}
+@media (max-width: 900px) {
+  .social-cards {
+    gap: 32px;
+  }
+  .social-card {
+    min-height: 320px;
+    padding: 32px 0;
+  }
+  .social-card .phone-frame {
+    width: 160px;
+    height: 320px;
+    padding: 10px 4px 16px 4px;
+  }
+}
+
+/* Todas las tarjetas de redes sociales del mismo tamaño */
+.social-card {
+  min-height: 480px;
+  max-width: 420px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+.social-cards {
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  gap: 48px;
+}
+@media (max-width: 1300px) {
+  .social-cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+  }
+  .social-card {
+    max-width: 95vw;
+    min-height: 380px;
+  }
+}
+
+/* Fondo multimedia en la pantalla del celular de redes sociales */
+.phone-screen {
+  position: relative;
+  overflow: hidden;
+}
+.phone-bg-media {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  border-radius: 24px;
+}
+.phone-overlay {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(120deg, rgba(0,0,0,0.22) 0%, rgba(0,0,0,0.33) 100%);
+  z-index: 1;
+  border-radius: 24px;
+}
+.phone-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
+.phone-content h3, .phone-content p, .phone-content a {
+  color: #fff;
+}
+.phone-content h3 {
+  margin-bottom: 8px;
+}
+.phone-content p {
+  margin-bottom: 16px;
+}
+
+/* --- Mejorar el marco del celular para que parezca un iPhone --- */
+.phone-frame {
+  background: linear-gradient(135deg, #e3e3e3 0%, #f7f7f7 60%, #bdbdbd 100%);
+  border-radius: 48px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18), 0 2px 8px rgba(210,105,30,0.10);
+  width: 260px;
+  height: 540px;
+  margin: 0 auto;
+  padding: 24px 12px 36px 12px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 4px solid #bdbdbd;
+  box-sizing: border-box;
+}
+.phone-frame:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 7px;
+  background: #bdbdbd;
+  border-radius: 4px;
+  opacity: 0.45;
+  z-index: 2;
+}
+.phone-frame:after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 38px;
+  height: 38px;
+  background: #e3e3e3;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  opacity: 0.7;
+  z-index: 2;
+  border: 2px solid #bdbdbd;
+}
+.phone-screen {
+  border-radius: 36px;
+  box-shadow: 0 2px 8px rgba(210,105,30,0.07);
+}
+@media (max-width: 900px) {
+  .phone-frame {
+    width: 180px;
+    height: 340px;
+    padding: 10px 4px 16px 4px;
+    border-radius: 32px;
+  }
+  .phone-frame:before {
+    width: 36px;
+    height: 5px;
+    top: 8px;
+    border-radius: 2.5px;
+  }
+  .phone-frame:after {
+    width: 22px;
+    height: 22px;
+    bottom: 8px;
+    border-radius: 50%;
+  }
+  .phone-screen {
+    border-radius: 18px;
+  }
+}
+
+/* --- iPhone 15/16 style for phone-frame --- */
+.phone-frame {
+  background: linear-gradient(135deg, #e3e3e3 0%, #f7f7f7 60%, #bdbdbd 100%);
+  border-radius: 54px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18), 0 2px 8px rgba(210,105,30,0.10);
+  width: 260px;
+  height: 540px;
+  margin: 0 auto;
+  padding: 18px 8px 18px 8px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2.5px solid #bdbdbd;
+  box-sizing: border-box;
+}
+.phone-frame:before {
+  /* Dynamic Island */
+  content: '';
+  display: block;
+  position: absolute;
+  top: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 72px;
+  height: 18px;
+  background: #222;
+  border-radius: 12px 12px 16px 16px / 12px 12px 16px 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+  opacity: 0.92;
+  z-index: 2;
+  border: 1.5px solid #444;
+}
+.phone-frame:after {
+  display: none;
+}
+.phone-screen {
+  border-radius: 44px;
+  box-shadow: 0 2px 8px rgba(210,105,30,0.07);
+}
+@media (max-width: 900px) {
+  .phone-frame {
+    width: 160px;
+    height: 320px;
+    padding: 8px 2px 8px 2px;
+    border-radius: 28px;
+  }
+  .phone-frame:before {
+    width: 38px;
+    height: 9px;
+    top: 10px;
+    border-radius: 6px 6px 8px 8px / 6px 6px 8px 8px;
+  }
+  .phone-screen {
+    border-radius: 14px;
+  }
+}
+
+/* --- Marco iPhone 15/16 con Dynamic Island --- */
+.phone-frame {
+  background: #111;
+  border-radius: 48px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18), 0 2px 8px rgba(0,0,0,0.10);
+  width: 260px;
+  height: 540px;
+  margin: 0 auto;
+  padding: 12px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 5px solid #111;
+  box-sizing: border-box;
+  overflow: visible;
+}
+.phone-frame:before {
+  /* Dynamic Island */
+  content: '';
+  display: block;
+  position: absolute;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 22px;
+  background: #111;
+  border-radius: 14px 14px 14px 14px / 12px 12px 12px 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+  z-index: 3;
+}
+.phone-frame:after {
+  display: none;
+}
+.phone-screen {
+  border-radius: 40px;
+  box-shadow: 0 2px 8px rgba(210,105,30,0.07);
+  overflow: hidden;
+}
+@media (max-width: 900px) {
+  .phone-frame {
+    width: 180px;
+    height: 340px;
+    padding: 6px;
+    border-radius: 28px;
+  }
+  .phone-frame:before {
+    width: 48px;
+    height: 13px;
+    top: 8px;
+    border-radius: 7px 7px 7px 7px / 6px 6px 6px 6px;
+  }
+  .phone-screen {
+    border-radius: 14px;
+  }
+}
+
+/* Usar imagen de marco de iPhone como overlay */
+.phone-frame-img-container {
+  position: relative;
+  width: 340px;
+  height: 700px;
+  max-width: 95vw;
+  max-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.phone-screen-content {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  width: 305px;
+  height: 672px;
+  border-radius: 32px;
+  overflow: hidden;
+  background: #fff;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.phone-frame-img {
+  position: absolute;
+  top: 0; left: 0;
+  width: 340px;
+  height: 700px;
+  z-index: 2;
+  pointer-events: none;
+  user-select: none;
+  max-width: 100%;
+  max-height: 100%;
+}
+@media (max-width: 500px) {
+  .phone-frame-img-container {
+    width: 98vw;
+    height: auto;
+    max-width: 98vw;
+    max-height: 80vh;
+  }
+  .phone-frame-img {
+    width: 100%;
+    height: auto;
+    max-width: 100vw;
+    max-height: 80vh;
+  }
+  .phone-screen-content {
+    top: 5vw;
+    left: 5vw;
+    width: calc(100vw - 10vw);
+    height: calc(80vh - 2 * 5vw);
+    border-radius: 7vw;
+  }
+}
+
+@media (max-width: 700px) {
+  .social-cards {
+    flex-direction: column;
+    gap: 86px;
+    align-items: center;
+    width: 100vw;
+    padding-bottom: 86px;
+  }
+  .social-card {
+    width: 100vw;
+    margin-bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+  .phone-frame-img-container {
+    width: 98vw;
+    aspect-ratio: 340/700;
+    max-width: 98vw;
+    min-width: 0;
+    margin-bottom: 0;
+    position: relative;
+    z-index: 2;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .phone-frame-img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 340/700;
+    max-width: 100vw;
+    max-height: 100vh;
+    position: absolute;
+    top: 0; left: 0;
+    z-index: 2;
+    pointer-events: none;
+    user-select: none;
+  }
+  .phone-screen-content {
+    position: absolute;
+    top: 3.6vw;
+    left: 5vw;
+    width: 89vw;
+    height: 196vw;
+    max-width: 305px;
+    max-height: 672px;
+    border-radius: 7vw;
+    overflow: hidden;
+    background: #fff;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
 

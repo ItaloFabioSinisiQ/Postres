@@ -554,3 +554,17 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+
+// Animación moderna de scroll para social-cards (celular)
+const socialCards = document.querySelectorAll('.scroll-animate');
+if (socialCards.length) {
+  const socialObserver = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.18 });
+  socialCards.forEach(card => socialObserver.observe(card));
+}
