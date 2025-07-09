@@ -9,8 +9,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-  <canvas id="bg-particles"></canvas>
-
   <!-- Home Section -->
   <header class="hero section-animate" id="home">
     <div class="hero-bg"></div>
@@ -34,6 +32,7 @@
         <a href="https://facebook.com" class="hero-social-btn" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
         <a href="https://instagram.com" class="hero-social-btn" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
         <a href="https://wa.me/1234567890" class="hero-social-btn" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://tiktok.com" class="hero-social-btn" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
       </div>
     </div>
   </header>
@@ -56,6 +55,7 @@
           </div>
           <h3><i class="fas fa-cheese"></i> Cheesecake</h3>
           <p>Suave, cremoso y delicioso.</p>
+          <button class="add-to-cart-btn" data-product="Cheesecake" data-price="24.99"><i class="fas fa-cart-plus"></i> Agregar al carrito</button>
           <a href="https://wa.me/1234567890?text=Hola!%20Quiero%20comprar%20un%20Cheesecake" target="_blank" class="buy-whatsapp"><i class="fab fa-whatsapp"></i> Comprar</a>
         </div>
         <div class="product-card">
@@ -70,6 +70,7 @@
           </div>
           <h3><i class="fas fa-cookie"></i> Brownie</h3>
           <p>Chocolate intenso y textura perfecta.</p>
+          <button class="add-to-cart-btn" data-product="Brownie" data-price="12.99"><i class="fas fa-cart-plus"></i> Agregar al carrito</button>
           <a href="https://wa.me/1234567890?text=Hola!%20Quiero%20comprar%20un%20Brownie" target="_blank" class="buy-whatsapp"><i class="fab fa-whatsapp"></i> Comprar</a>
         </div>
         <div class="product-card">
@@ -84,6 +85,7 @@
           </div>
           <h3><i class="fas fa-apple-alt"></i> Tarta de Frutas</h3>
           <p>Fresca y colorida, con frutas de estación.</p>
+          <button class="add-to-cart-btn" data-product="Tarta de Frutas" data-price="19.99"><i class="fas fa-cart-plus"></i> Agregar al carrito</button>
           <a href="https://wa.me/1234567890?text=Hola!%20Quiero%20comprar%20una%20Tarta%20de%20Frutas" target="_blank" class="buy-whatsapp"><i class="fab fa-whatsapp"></i> Comprar</a>
         </div>
         <div class="product-card">
@@ -98,6 +100,7 @@
           </div>
           <h3><i class="fas fa-cupcake"></i> Cupcakes</h3>
           <p>Mini pastelitos decorados a tu gusto.</p>
+          <button class="add-to-cart-btn" data-product="Cupcakes" data-price="16.99"><i class="fas fa-cart-plus"></i> Agregar al carrito</button>
           <a href="https://wa.me/1234567890?text=Hola!%20Quiero%20comprar%20Cupcakes" target="_blank" class="buy-whatsapp"><i class="fab fa-whatsapp"></i> Comprar</a>
         </div>
         <!-- Puedes agregar más productos aquí -->
@@ -124,6 +127,7 @@
         <h3><i class="fas fa-birthday-cake"></i> Plan Cumpleaños</h3>
         <p><i class="fas fa-cake-candles"></i> Incluye 2 tortas y 24 cupcakes a precio especial.</p>
         <div class="plan-price">$49.99</div>
+        <button class="add-to-cart-btn" data-product="Plan Cumpleaños" data-price="49.99"><i class="fas fa-cart-plus"></i> Agregar al carrito</button>
         <a href="https://wa.me/1234567890?text=Hola!%20Me%20interesa%20el%20Plan%20Cumpleaños" target="_blank" class="buy-whatsapp"><i class="fab fa-whatsapp"></i> Lo quiero</a>
       </div>
       <div class="plan-card">
@@ -140,6 +144,7 @@
         <h3><i class="fas fa-ice-cream"></i> Plan Verano</h3>
         <p><i class="fas fa-sun"></i> 3 helados artesanales + 1 tarta de frutas.</p>
         <div class="plan-price">$29.99</div>
+        <button class="add-to-cart-btn" data-product="Plan Verano" data-price="29.99"><i class="fas fa-cart-plus"></i> Agregar al carrito</button>
         <a href="https://wa.me/1234567890?text=Hola!%20Me%20interesa%20el%20Plan%20Verano" target="_blank" class="buy-whatsapp"><i class="fab fa-whatsapp"></i> Lo quiero</a>
       </div>
       <div class="plan-card">
@@ -155,6 +160,7 @@
         <h3><i class="fas fa-calendar-week"></i> Promoción Semana</h3>
         <p><i class="fas fa-cookie-bite"></i> 2x1 en brownies todos los viernes.</p>
         <div class="plan-price">$9.99</div>
+        <button class="add-to-cart-btn" data-product="Promoción Semana" data-price="9.99"><i class="fas fa-cart-plus"></i> Agregar al carrito</button>
         <a href="https://wa.me/1234567890?text=Hola!%20Me%20interesa%20la%20Promoción%20Semana" target="_blank" class="buy-whatsapp"><i class="fab fa-whatsapp"></i> Lo quiero</a>
       </div>
       <div class="plan-card">
@@ -170,6 +176,7 @@
         <h3><i class="fas fa-mug-hot"></i> Plan Café y Dulce</h3>
         <p><i class="fas fa-coffee"></i> 2 cafés + 2 porciones de pastel a precio especial.</p>
         <div class="plan-price">$14.99</div>
+        <button class="add-to-cart-btn" data-product="Plan Café y Dulce" data-price="14.99"><i class="fas fa-cart-plus"></i> Agregar al carrito</button>
         <a href="https://wa.me/1234567890?text=Hola!%20Me%20interesa%20el%20Plan%20Café%20y%20Dulce" target="_blank" class="buy-whatsapp"><i class="fab fa-whatsapp"></i> Lo quiero</a>
       </div>
     </div>
@@ -227,6 +234,19 @@
     </div>
   </section>
 
+  <!-- Sobre Nosotros -->
+  <section class="about-section section-animate" id="about">
+      <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836" alt="Equipo Delicias Dulces" class="about-img" />
+      <div class="about-content">
+        <h2><i class="fas fa-heart"></i> Sobre nosotros</h2>
+        <p>
+          Somos <strong>Delicias Dulces</strong>, un emprendimiento familiar apasionado por la repostería artesanal. Cada postre es elaborado con dedicación, ingredientes frescos y mucho amor.<br><br>
+          Nuestra misión es endulzar tus momentos especiales, creando recuerdos inolvidables a través de sabores únicos y presentaciones cuidadas.<br><br>
+          <i class="fas fa-seedling"></i> Calidad artesanal &nbsp; <i class="fas fa-users"></i> Atención personalizada &nbsp; <i class="fas fa-star"></i> Satisfacción garantizada
+        </p>
+      </div>
+  </section>
+  
   <!-- Contact Form Section -->
   <section class="contact section-animate" id="contact">
     <div class="contact-card">
@@ -333,11 +353,37 @@
           <i class="fab fa-whatsapp"></i>
           Comprar Ahora
         </button>
+        <button class="modal-add-cart-btn add-to-cart-btn" id="modal-add-cart-btn" data-product="" data-price="">
+          <i class="fas fa-cart-plus"></i> Agregar al carrito
+          <span class="modal-cart-count" id="modal-cart-count" style="margin-left:0.7em; background:#fffbe6; color:#fda085; border-radius:12px; padding:0.18em 0.7em; font-weight:bold; font-size:1.05em; display:none;">0</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modal de Carrito -->
+  <div id="cart-modal" class="cart-modal">
+    <div class="cart-modal-overlay"></div>
+    <div class="cart-modal-content">
+      <button class="cart-modal-close" id="cart-modal-close" title="Cerrar"><i class="fas fa-times"></i></button>
+      <h2><i class="fas fa-shopping-cart"></i> Tu carrito</h2>
+      <ul class="cart-items-list" id="cart-items-list">
+        <!-- Aquí se agregan los productos seleccionados -->
+      </ul>
+      <div class="cart-modal-actions">
+        <button class="cart-modal-send" id="cart-modal-send"><i class="fab fa-whatsapp"></i> Enviar pedido por WhatsApp</button>
       </div>
     </div>
   </div>
   
   <button id="scrollToTop" title="Volver arriba"><i class="fas fa-arrow-up"></i></button>
   <script src="main.js"></script>
+  <a href="https://wa.me/1234567890" class="whatsapp-float" target="_blank" title="Contáctanos por WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  <a href="#" class="cart-float" id="cart-float" title="Ver carrito">
+    <i class="fas fa-shopping-cart"></i>
+    <span class="cart-count" id="cart-count">0</span>
+  </a>
 </body>
 </html>
