@@ -756,4 +756,13 @@ document.addEventListener('DOMContentLoaded', function() {
       addToCart(product, price, this);
     });
   }
+
+  // Botón ir al inicio en el modal del carrito
+  const cartModalHomeBtn = document.getElementById('cart-modal-home-btn');
+  if (cartModalHomeBtn) {
+    cartModalHomeBtn.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      if (cartModal.classList.contains('show')) cartModal.classList.remove('show');
+    });
+  }
 });
