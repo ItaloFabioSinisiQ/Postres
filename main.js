@@ -322,11 +322,11 @@ function showLoadingScreen(whatsappUrl, productName) {
   
   loadingScreen.classList.add('show');
   
-  // Redirect to WhatsApp after 3 seconds
+  // Redirect to WhatsApp after 1.5 seconds (antes 3 segundos)
   setTimeout(() => {
     window.open(whatsappUrl, '_blank');
     loadingScreen.classList.remove('show');
-  }, 3000);
+  }, 1000);
 }
 
 // Function to create personalized WhatsApp message
@@ -600,6 +600,9 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   addToCartBtns.forEach(btn => {
+    // Excluir el botón del modal para evitar duplicación
+    if (btn.id === 'modal-add-cart-btn') return;
+    
     btn.addEventListener('click', function() {
       const product = this.getAttribute('data-product');
       const price = parseFloat(this.getAttribute('data-price')) || 0;
