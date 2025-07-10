@@ -525,7 +525,35 @@ function openProductModal(productName) {
   const data = product || plan;
   // Populate modal with product/plan data
   modalProductTitle.textContent = data.title;
-  modalProductDescription.textContent = data.description;
+  // Mensaje de scroll mejorado y más pequeño
+  const scrollMsg = `
+    <div style="
+      background: linear-gradient(90deg, #fffbe6 0%, #fda08522 100%);
+      color: #fda085;
+      font-size: 0.98em;
+      margin-bottom: 0.6em;
+      border-radius: 14px;
+      padding: 0.35em 0.7em 0.25em 0.7em;
+      text-align: center;
+      box-shadow: 0 1px 4px rgba(253,160,133,0.10);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.1em;
+    ">
+      <span style="font-size:1.3em; animation: bounceDown 1.2s infinite alternate; display:inline-block;">
+        <i class='fas fa-arrow-down'></i>
+      </span>
+      <span style="font-weight:bold; letter-spacing:0.5px; font-size:0.98em;">Desliza para ver más detalles</span>
+    </div>
+    <style>
+      @keyframes bounceDown {
+        0% { transform: translateY(0); }
+        100% { transform: translateY(7px); }
+      }
+    </style>
+  `;
+  modalProductDescription.innerHTML = scrollMsg + data.description;
   modalPrepTime.textContent = data.prepTime;
   modalServings.textContent = data.servings;
   modalIngredients.textContent = data.ingredients;
@@ -533,7 +561,7 @@ function openProductModal(productName) {
   // Set video source
   productVideo.src = data.video;
   // Update buy button text based on type
-  modalBuyBtn.innerHTML = `<i class="fab fa-whatsapp"></i> ${isPlan ? 'Lo quiero' : 'Comprar Ahora'}`;
+  modalBuyBtn.innerHTML = `<i class=\"fab fa-whatsapp\"></i> ${isPlan ? 'Lo quiero' : 'Comprar Ahora'}`;
   // Show modal
   productModal.classList.add('show');
   document.body.style.overflow = 'hidden';

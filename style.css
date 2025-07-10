@@ -3080,7 +3080,7 @@ h2:hover i.fa-envelope {
 .social-card.instagram .phone-content i {
   font-size: 3.5rem;
   margin-bottom: 15px;
-  background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf);
+  background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -4671,6 +4671,74 @@ h2:hover i.fa-envelope {
     padding: 0 0.5em;
     border-right: none;
   }
+}
+
+.social-card.youtube {
+  background: linear-gradient(135deg, #ff0000 0%, #ff5757 100%);
+  box-shadow: 0 8px 32px rgba(255, 0, 0, 0.18), 0 2px 8px rgba(255,0,0,0.10);
+}
+.social-card.youtube .phone-frame {
+  border: 3px solid #ff000033;
+}
+.social-card.youtube .phone-content {
+  text-align: center;
+  padding: 20px;
+}
+.social-card.youtube .phone-content i {
+  font-size: 3.5rem;
+  margin-bottom: 15px;
+  color: #fff;
+  background: linear-gradient(45deg, #ff0000, #ff5757, #fff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 4px 12px rgba(255, 0, 0, 0.6));
+  animation: youtube-icon-glow 3s ease-in-out infinite alternate;
+}
+@keyframes youtube-icon-glow {
+  0% {
+    filter: drop-shadow(0 4px 12px rgba(255, 0, 0, 0.6));
+    transform: scale(1);
+  }
+  100% {
+    filter: drop-shadow(0 8px 24px rgba(255, 0, 0, 1));
+    transform: scale(1.08);
+  }
+}
+.social-card.youtube .phone-content h3 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+  background: linear-gradient(45deg, #ff0000, #ff5757);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 4px 15px rgba(255, 0, 0, 0.8);
+  letter-spacing: 1px;
+  animation: youtube-title-pulse 2s ease-in-out infinite alternate;
+}
+@keyframes youtube-title-pulse {
+  0% { text-shadow: 0 4px 15px rgba(255, 0, 0, 0.8); }
+  100% { text-shadow: 0 8px 30px rgba(255, 0, 0, 1); }
+}
+.social-card.youtube .phone-content p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  font-weight: 500;
+  line-height: 1.4;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 12px 20px;
+  border-radius: 25px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  animation: youtube-text-float 4s ease-in-out infinite;
+}
+@keyframes youtube-text-float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0px); }
 }
 
 
