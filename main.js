@@ -597,6 +597,7 @@ document.addEventListener('DOMContentLoaded', function() {
     updateCartCount();
     showCartAddedFeedback(btn);
     updateModalCartCount();
+    pulseCartFloat(); // <-- EFECTO DE PULSACIÓN AL AGREGAR AL CARRITO
   }
 
   addToCartBtns.forEach(btn => {
@@ -769,3 +770,15 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
+
+// --- EFECTO DE PULSACIÓN EN EL BOTÓN FLOTANTE DEL CARRITO ---
+function pulseCartFloat() {
+  const cartFloat = document.getElementById('cart-float');
+  if (!cartFloat) return;
+  cartFloat.classList.remove('pulse'); // Reinicia si ya está
+  // Forzar reflow para reiniciar la animación
+  void cartFloat.offsetWidth;
+  cartFloat.classList.add('pulse');
+}
+// Ejemplo: llama a pulseCartFloat() cuando se agrega un producto al carrito
+// Puedes mover esta llamada a donde prefieras que se active el efecto
