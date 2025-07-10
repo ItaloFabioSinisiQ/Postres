@@ -1162,9 +1162,10 @@ h1 i, h2 i {
 /* --- Scroll to top button --- */
 #scrollToTop {
   position: fixed;
-  bottom: 32px;
-  right: 32px;
-  z-index: 9999;
+  top: 85%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
   background: linear-gradient(120deg, #fda085 0%, #f6d365 100%);
   color: #fff;
   border: none;
@@ -4204,7 +4205,7 @@ h2:hover i.fa-envelope {
   position: fixed;
   width: 58px;
   height: 58px;
-  bottom: 100px;
+  bottom: 85px;/* <--- AQUÍ puedes cambiar este valor para abajo */ 
   right: 28px;
   background: linear-gradient(135deg, #fda085 0%, #f6d365 100%);
   color: #fff;
@@ -4559,6 +4560,25 @@ h2:hover i.fa-envelope {
     transform: scale(1);
     box-shadow: 0 0 0 0 #fda08500, 0 0 0 0 #f6d36500;
   }
+}
+
+.cart-float.cart-has-items::after {
+  content: "➤";
+  position: absolute;
+  left: -43px;
+  top: 50%;
+  bottom: auto;
+  transform: translateY(-50%);
+  font-size: 3.5rem;
+  color: #fda085;
+  animation: arrow-bounce-left 1s infinite;
+  pointer-events: none;
+  z-index: 1001;
+}
+
+@keyframes arrow-bounce-left {
+  0%, 100% { transform: translateY(-50%) translateX(0); }
+  50% { transform: translateY(-50%) translateX(-12px); }
 }
 
 

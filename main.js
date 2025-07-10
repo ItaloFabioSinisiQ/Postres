@@ -615,6 +615,11 @@ document.addEventListener('DOMContentLoaded', function() {
   function updateCartCount() {
     const total = cart.reduce((sum, item) => sum + item.qty, 0);
     cartCount.textContent = total;
+    if (total > 0) {
+      cartFloat.classList.add('cart-has-items');
+    } else {
+      cartFloat.classList.remove('cart-has-items');
+    }
   }
 
   // Mostrar feedback visual al agregar
