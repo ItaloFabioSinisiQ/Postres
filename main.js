@@ -19,12 +19,12 @@ document.querySelectorAll('.section-animate').forEach(section => {
   observer.observe(section);
 });
 
-// Carrusel de productos tipo cinta transportadora
-(function() {
-  const track = document.querySelector('.carousel-track');
+// Carruseles de productos tipo cinta transportadora (múltiples)
+document.querySelectorAll('.carousel-container').forEach(container => {
+  const track = container.querySelector('.carousel-track');
   const cards = Array.from(track.children);
-  const btnLeft = document.querySelector('.carousel-btn.left');
-  const btnRight = document.querySelector('.carousel-btn.right');
+  const btnLeft = container.querySelector('.carousel-btn.left');
+  const btnRight = container.querySelector('.carousel-btn.right');
   let position = 0;
   let cardWidth = cards[0].offsetWidth + 32; // 32px gap
   let visibleCards = Math.floor(track.parentElement.offsetWidth / cardWidth);
@@ -78,7 +78,7 @@ document.querySelectorAll('.section-animate').forEach(section => {
   updateCardWidth();
   moveCarousel(0);
   startAutoScroll();
-})();
+});
 
 // Scroll to top button
 const scrollBtn = document.getElementById('scrollToTop');
@@ -404,6 +404,60 @@ const productData = {
     ingredients: 'Harina, azúcar, huevos, mantequilla, leche, frosting',
     price: '$15.99',
     video: 'https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_4mb.mp4'
+  },
+  'Macarons': {
+    title: 'Macarons Franceses',
+    description: 'Delicados, coloridos y rellenos de sabor. Hechos con harina de almendra y rellenos de crema de mantequilla.',
+    prepTime: '5 horas',
+    servings: '12 unidades',
+    ingredients: 'Harina de almendra, azúcar, claras, colorante, crema de mantequilla',
+    price: '$22.99',
+    video: 'https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_9mb.mp4'
+  },
+  'Alfajores': {
+    title: 'Alfajores Artesanales',
+    description: 'Clásicos alfajores rellenos de dulce de leche y cubiertos de chocolate. Perfectos para acompañar el café o regalar.',
+    prepTime: '2 horas',
+    servings: '10 unidades',
+    ingredients: 'Harina, maicena, manteca, azúcar, dulce de leche, chocolate',
+    price: '$14.99',
+    video: 'https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_10mb.mp4'
+  },
+  'Tiramisú': {
+    title: 'Tiramisú Clásico',
+    description: 'Postre italiano con capas de bizcocho empapado en café, crema de mascarpone y cacao. Un clásico irresistible.',
+    prepTime: '4 horas',
+    servings: '8 porciones',
+    ingredients: 'Bizcochos, café, mascarpone, huevos, azúcar, cacao',
+    price: '$26.99',
+    video: 'https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_11mb.mp4'
+  },
+  'Lemon Pie': {
+    title: 'Lemon Pie',
+    description: 'Base crocante, crema de limón y merengue suave. Refrescante y perfecto para los amantes de los cítricos.',
+    prepTime: '3 horas',
+    servings: '8-10 porciones',
+    ingredients: 'Harina, manteca, azúcar, limón, huevos, merengue',
+    price: '$18.99',
+    video: 'https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_12mb.mp4'
+  },
+  'Chocotorta': {
+    title: 'Chocotorta',
+    description: 'Clásico argentino con dulce de leche y galletas de chocolate. Sin horno y con mucho sabor.',
+    prepTime: '2 horas',
+    servings: '10 porciones',
+    ingredients: 'Galletas de chocolate, dulce de leche, queso crema, café',
+    price: '$21.99',
+    video: 'https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_13mb.mp4'
+  },
+  'Red Velvet': {
+    title: 'Red Velvet Cake',
+    description: 'Bizcocho rojo aterciopelado con crema de queso. Esponjoso, vistoso y delicioso.',
+    prepTime: '4 horas',
+    servings: '8-10 porciones',
+    ingredients: 'Harina, cacao, azúcar, huevos, colorante rojo, queso crema',
+    price: '$23.99',
+    video: 'https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_14mb.mp4'
   }
 };
 
@@ -530,7 +584,14 @@ document.addEventListener('DOMContentLoaded', function() {
       const productCard = this.closest('.product-card');
       const titleElement = productCard.querySelector('h3');
       if (titleElement) {
-        const productName = titleElement.textContent.trim();
+        // Obtiene solo el texto después del ícono (último nodo de texto)
+        let productName = '';
+        titleElement.childNodes.forEach(node => {
+          if (node.nodeType === Node.TEXT_NODE) {
+            productName += node.textContent;
+          }
+        });
+        productName = productName.trim();
         openProductModal(productName);
       }
     });
